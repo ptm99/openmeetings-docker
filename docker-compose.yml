@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  openmeeting:
+    image: apache/openmeetings:7.2.0
+    ports:
+      - "5443:5443"
+    volumes:
+      - ./omdata:/opt/omdata
+      #- ./omhome:/opt/openmeetings
+      - ./dbdata:/var/lib/mysql/
+    restart: always
